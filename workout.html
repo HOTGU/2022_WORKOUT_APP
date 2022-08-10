@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WORKOUT🚀</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="workout.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="head">
+                <div class="btn-container">
+                    <button id="workout-control-btn" class="head__btn">운동시작</button>
+                    <a href="./index.html">
+                        <button id="workout-control-btn" class="head__btn link">
+                            기록보기
+                        </button>
+                    </a>
+                </div>
+                <div id="timer">00 : 00</div>
+            </div>
+
+            <div id="record-container" class="record toggle">
+                <div class="record__item">
+                    <input type="number" id="pushup" placeholder="푸쉬업" />
+                    <div id="pushup-container" class="count-container"></div>
+                </div>
+                <div class="record__item">
+                    <input type="number" id="pullup" placeholder="풀 업" />
+                    <div id="pullup-container" class="count-container"></div>
+                </div>
+                <div class="record__item">
+                    <input type="number" id="squat" placeholder="스쿼트" />
+                    <div id="squat-container" class="count-container"></div>
+                </div>
+            </div>
+        </div>
+        <script src="./workout.js"></script>
+    </body>
+</html>

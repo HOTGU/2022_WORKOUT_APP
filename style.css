@@ -1,0 +1,60 @@
+.chart {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #1abc9c;
+    /* background-color: white; */
+    border-radius: 10px;
+}
+
+.head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+select,
+option {
+    border: 0px;
+    outline: 0px;
+    scroll-behavior: smooth;
+}
+
+select {
+    width: 70px;
+    height: 60px;
+    padding: 0 10px;
+    border: none;
+    background-color: #1abc9c;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+a {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    text-decoration: none;
+    color: #16a085;
+}
+.apexcharts-tooltip {
+    background: #f3f3f3;
+    color: #2c3e50;
+}
+
+#count-head {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.count-text {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
