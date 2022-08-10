@@ -59,42 +59,40 @@ const stopTimer = () => {
         totalSquat = totalSquat + Number(item.value);
     });
 
-    if (workoutData.length > 0) {
-        const checkSameDay = workoutData.find(
-            (item) => item.month === month && item.day === day
-        );
+    const checkSameDay = workoutData?.find(
+        (item) => item.month === month && item.day === day
+    );
 
-        if (checkSameDay) {
-            const updatedArr = workoutData.map((item) => {
-                if (item.month === month && item.day === day) {
-                    item.data.pushup += totalPushup;
-                    item.data.pullup += totalPullup;
-                    item.data.squat += totalSquat;
-                    item.time += second;
-                }
-                return item;
-            });
-            localStorage.setItem("workout", JSON.stringify(updatedArr));
-        } else {
-            workOutObj = {
-                day,
-                month,
-                time: second,
-                data: {
-                    pushup: totalPushup,
-                    pullup: totalPullup,
-                    squat: totalSquat,
-                },
-            };
-            workoutData.push(workOutObj);
-            localStorage.setItem("workout", JSON.stringify(workoutData));
-        }
-        const { showMinite, showSecond } = convertTimer(second);
-        window.alert(
-            `👋${showMinite}분 ${showSecond}초 동안 푸쉬업:${totalPushup}개 풀업:${totalPullup}개 스쿼트:${totalSquat}개 했습니다👋`
-        );
-        window.location.href = "./index.html";
+    if (checkSameDay) {
+        const updatedArr = workoutData.map((item) => {
+            if (item.month === month && item.day === day) {
+                item.data.pushup += totalPushup;
+                item.data.pullup += totalPullup;
+                item.data.squat += totalSquat;
+                item.time += second;
+            }
+            return item;
+        });
+        localStorage.setItem("workout", JSON.stringify(updatedArr));
+    } else {
+        workOutObj = {
+            day,
+            month,
+            time: second,
+            data: {
+                pushup: totalPushup,
+                pullup: totalPullup,
+                squat: totalSquat,
+            },
+        };
+        workoutData.push(workOutObj);
+        localStorage.setItem("workout", JSON.stringify(workoutData));
     }
+    const { showMinite, showSecond } = convertTimer(second);
+    window.alert(
+        `👋${showMinite}분 ${showSecond}초 동안 푸쉬업:${totalPushup}개 풀업:${totalPullup}개 스쿼트:${totalSquat}개 했습니다👋`
+    );
+    window.location.href = "./index.html";
 };
 
 const handleControl = () => {
